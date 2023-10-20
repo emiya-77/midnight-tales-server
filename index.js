@@ -63,15 +63,16 @@ async function run() {
             const updatedShow = req.body;
             const show = {
                 $set: {
-                    image: updatedShow.name,
-                    name: updatedShow.quantity,
-                    brandName: updatedShow.supplier,
-                    type: updatedShow.taste,
-                    price: updatedShow.category,
-                    rating: updatedShow.details
+                    image: updatedShow.image,
+                    name: updatedShow.name,
+                    brandName: updatedShow.brand,
+                    type: updatedShow.type,
+                    price: updatedShow.price,
+                    rating: updatedShow.rating,
+                    description: updatedShow.description
                 }
             }
-
+            
             const result = await showsCollection.updateOne(filter, show, options);
             res.send(result);
         })
