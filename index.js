@@ -72,6 +72,7 @@ async function run() {
                     description: updatedShow.description
                 }
             }
+            console.log(show);
             
             const result = await showsCollection.updateOne(filter, show, options);
             res.send(result);
